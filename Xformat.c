@@ -3,38 +3,41 @@
 #include <stdarg.h>
 #include <stdlib.h>
 /**
- *uformat - does the %u in print f
- *@arg: arguments
- *@c: var in use for unsigned int
+ * Xformat - %X format of printf
+ * @arg: arguments
+ * @c: var
  *
- *Return: Void
+ * Return: Void
  */
-void uformat(va_list arg, int *c)
+void Xformat(va_list arg, int *c)
 {
 unsigned int num = va_arg(arg, unsigned int);
 char buffer[12];
 int len = 0;
 
-	do {
-	buffer[len++] = num % 10 + '0';
-	num /= 10;
+	if (num == 0)
+	{
+		putchar('0');
+		(*c)++;
+		return;
+	}
 
-	} while (num > 0);
-
-	buffer[len] = '\0';
-
+	while (num > 0)
+	{
+	int rem = num % 16;
+		buffer[len++] = (rem < 10) ? rem + '0' : rem - 10 + 'A';
+		num /= 16;
+	}
 	for (int i = 0, j = len - 1; i < j; i++, j--)
 	{
-		char temp = buffer[i];
-
+	char temp = buffer[i];
 		buffer[i] = buffer[j];
-
 		buffer[j] = temp;
 	}
 
 	for (int i = 0; i < len; i++)
 	{
 		putchar(buffer[i]);
-		(c)++;
+		(*c)++;
 	}
 }
