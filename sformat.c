@@ -11,9 +11,20 @@
 void sformat(va_list arg, int *count)
 {
 	char *str = va_arg(arg, char*);
-	while (*str !='\0')
+	char *n_str = "(null)";
+	if (str == NULL)
 	{
-		putchar(*str++);
-		(*count)++;
+		while(*n_str != '\0')
+		{
+			putchar(*n_str++);
+			(*count)++;
+		}
+	} else 
+	{
+		while (*str !='\0')
+		{
+			putchar(*str++);
+			(*count)++;
+		}
 	}
 }
