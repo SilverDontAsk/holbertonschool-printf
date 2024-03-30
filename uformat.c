@@ -15,23 +15,24 @@ unsigned int num = va_arg(arg, unsigned int);
 char buffer[12];
 int len = 0;
 
-
-	do 
-	{
+	do {
 	buffer[len++] = num % 10 + '0';
 	num /= 10;
-	}
-	while (num > 0);
+
+	} while (num > 0);
+
 	buffer[len] = '\0';
 
-	for (int i = 0, j = len - 1; i < j; i++, j--) 
+	for (int i = 0, j = len - 1; i < j; i++, j--)
 	{
 		char temp = buffer[i];
+
 		buffer[i] = buffer[j];
+
 		buffer[j] = temp;
 	}
 
-	for (int i = 0; i < len; i++) 
+	for (int i = 0; i < len; i++)
 	{
 		putchar(buffer[i]);
 		(c)++;
