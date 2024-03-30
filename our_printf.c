@@ -19,10 +19,15 @@ while ((f = *format++) != '\0')
 	if (f == '%')
 	{
 		f = *format++;
+		if (f == '\0')
+		{
+			putchar('%');
+			c++;
+			break;
+		}
 		switch (f)
 		{
-			case 'd':
-			case 'i':
+			case 'd': case 'i':
 				diformat(arg, &c);
 				break;
 			case 's':
