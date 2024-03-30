@@ -16,7 +16,7 @@ int c = 0;
 va_start(arg, format);
 while ((f = *format++) != '\0')
 {
-	if(f == '%')
+	if (f == '%')
 	{
 		f = *format++;
 		switch (f)
@@ -35,12 +35,13 @@ while ((f = *format++) != '\0')
 				percentformat(arg, &c);
 				break;
 			default:
-				putchar('%');
-				putchar(f);
-				c += 2;
-				break;
+			putchar('%');
+			putchar(f);
+			c += 2;
+			break;
 		}
-	} else {
+	} else
+	{
 		putchar(f);
 		c++;
 	}
