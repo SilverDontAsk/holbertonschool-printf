@@ -13,8 +13,8 @@
 void oformat(va_list arg, int *c)
 {
 unsigned int num = va_arg(arg, unsigned int);
-char buffer[12];
-int len = 0;
+char buffer[12], temp;
+int len = 0, rem, i, j;
 
 	if (num == 0)
 	{
@@ -25,18 +25,18 @@ int len = 0;
 
 	while (num > 0)
 	{
-	int rem = num % 8;
+	rem = num % 8;
 		buffer[len++] = rem + '0';
 		num /= 8;
 	}
-	for (int i = 0, j = len - 1; i < j; i++, j--)
+	for (i = 0, j = len - 1; i < j; i++, j--)
 	{
-	char temp = buffer[i];
+	temp = buffer[i];
 		buffer[i] = buffer[j];
 		buffer[j] = temp;
 	}
 
-	for (int i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 	{
 		putchar(buffer[i]);
 		(*c)++;

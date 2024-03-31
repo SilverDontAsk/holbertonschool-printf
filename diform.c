@@ -16,6 +16,7 @@ void diformat(va_list arg, int *count)
 	{
 		putchar('-');
 		num = -num;
+		(*count)++;
 	}
 	while (num / divisor > 9)
 	{

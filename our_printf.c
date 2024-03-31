@@ -39,6 +39,22 @@ while ((f = *format++) != '\0')
 			case '%':
 				percentformat(arg, &c);
 				break;
+			case 'o':
+				oformat(arg, &c);
+				break;
+			case 'u':
+				uformat(arg, &c);
+				break;
+			case 'x':
+				xformat(arg, &c);
+				break;
+			case 'X':
+				Xformat(arg, &c);
+				break;
+			case 'p':
+				pformat(arg, &c);
+				break;
+
 			default:
 			putchar('%');
 			putchar(f);

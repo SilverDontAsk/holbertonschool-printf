@@ -12,8 +12,8 @@
 void uformat(va_list arg, int *c)
 {
 unsigned int num = va_arg(arg, unsigned int);
-char buffer[12];
-int len = 0;
+char buffer[12], temp;
+int len = 0, i, j;
 
 	do {
 	buffer[len++] = num % 10 + '0';
@@ -23,16 +23,16 @@ int len = 0;
 
 	buffer[len] = '\0';
 
-	for (int i = 0, j = len - 1; i < j; i++, j--)
+	for (i = 0, j = len - 1; i < j; i++, j--)
 	{
-		char temp = buffer[i];
+		temp = buffer[i];
 
 		buffer[i] = buffer[j];
 
 		buffer[j] = temp;
 	}
 
-	for (int i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 	{
 		putchar(buffer[i]);
 		(c)++;
