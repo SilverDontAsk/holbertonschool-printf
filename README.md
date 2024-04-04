@@ -8,7 +8,9 @@
 
 
 ![image](https://github.com/SilverDontAsk/holbertonschool-printf/assets/147434626/f7db1af7-272c-4b51-94cb-705b99995830)
-output of this with our printf would be...
+
+the output of this with our printf would be...
+
 ![image](https://github.com/SilverDontAsk/holbertonschool-printf/assets/147434626/46e87a12-31df-4711-8b62-3dbef5f38c2b)
 
 
@@ -16,7 +18,11 @@ Contributors:
 
 - Steven Rosario Ramirez
   - Discord: stevenrosarioramirez_86578
+  - Github: https://github.com/SilverDontAsk
+  - Email: SilverMaster63@gmail.com
 
 - Abdiel Rodriguez Gonzalez
-  - Github:
-  - Email: 
+  - Github: abdieljrg 
+  - Email: 9048@holbertonstudents.com
+  - Discord: abdiel9048
+  - Phone: 939-276-3173
